@@ -3,10 +3,8 @@ import { motion } from "framer-motion";
 
 export const CardWrapper = styled.div`
   position: relative;
-  padding: 25px;
   height: 360px;
-  flex: 0 0 33.3%;
-  max-width: 33.3%;
+  flex: 0 0 auto;
   position: relative;
 `;
 

@@ -42,6 +42,7 @@ export const ProfileContent = styled(motion.div)`
   width: 100%;
   margin: 0 auto;
   overflow-y: auto;
+  max-height: calc(100vh - 80px);
 `;
 
 export const ProfileImageContainer = styled(motion.div)`
