@@ -1,5 +1,3 @@
-import { LoremIpsum } from "react-lorem-ipsum";
-
 import * as Styled from "./Profile.styled";
 import { ProfileProps } from "./Profile.types";
 import { Inbox } from "./../inbox/Inbox";

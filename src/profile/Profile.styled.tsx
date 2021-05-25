@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { CardEmrId, CardTitle } from "../card/Card.styled";
-import { FunctionComponent } from "react";
 
 export const ProfileOverlay = styled(motion.div)`
   z-index: 1;
