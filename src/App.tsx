@@ -5,7 +5,6 @@ import { CardProps } from "./card/Card.types";
 import { Profile } from "./profile/Profile";
 import { PATIENTS } from "./data/data";
 import { Layout } from "./layout/Layout";
-import "./App.css";
 
 function App() {
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
