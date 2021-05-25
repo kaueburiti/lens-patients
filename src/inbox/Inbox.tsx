@@ -39,13 +39,13 @@ const data = [
     date: dateFormat(new Date(), "mmmm dS, h:MM:ss TT"),
   },
   {
-    key: 1,
+    key: 3,
     documentType: "Metabolic Lab Report",
     sender: "Memorial Hospital",
     date: dateFormat(new Date(), "mmmm dS, h:MM:ss TT"),
   },
   {
-    key: 1,
+    key: 4,
     documentType: "Presciption Request",
     sender: "Memorial Hospital",
     date: dateFormat(new Date(), "mmmm dS, h:MM:ss TT"),
