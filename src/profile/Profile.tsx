@@ -65,7 +65,7 @@ export const Profile: React.FC<ProfileProps> = ({
             </Styled.ProfileTitle>
           </Styled.ProfileTitleContainer>
           <Styled.ProfileContentContainer animate>
-            <Inbox />
+            <Inbox patientId={id} />
           </Styled.ProfileContentContainer>
         </Styled.ProfileContent>
       </Styled.ProfileContainer>

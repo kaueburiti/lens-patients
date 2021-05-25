@@ -1,7 +1,9 @@
-import { Button, Table } from "antd";
+import { Button, Table, Tooltip } from "antd";
 import dateFormat from "dateformat";
 import { DownloadOutlined } from "@ant-design/icons";
 import React from "react";
+import { useQuery } from "react-query";
+import { getDocumentsFromPatient } from "../api/api";
 
 const columns = [
   {
@@ -20,46 +22,40 @@ const columns = [
     width: 30,
     key: "x",
     render: () => (
-      <Button type="primary" icon={<DownloadOutlined />} shape="circle" />
+      <Tooltip title="Download not implemented, sorry!" placement="top">
+        <Button type="primary" icon={<DownloadOutlined />} shape="circle" />
+      </Tooltip>
     ),
   },
 ];
 
-const data = [
-  {
-    key: 1,
-    documentType: "Medical History",
-    sender: "Memorial Hospital",
-    date: dateFormat(new Date(), "mmmm dS, h:MM:ss TT"),
-  },
-  {
-    key: 2,
-    documentType: "Metabolic Lab Report",
-    sender: "Memorial Hospital",
-    date: dateFormat(new Date(), "mmmm dS, h:MM:ss TT"),
-  },
-  {
-    key: 3,
-    documentType: "Metabolic Lab Report",
-    sender: "Memorial Hospital",
-    date: dateFormat(new Date(), "mmmm dS, h:MM:ss TT"),
-  },
-  {
-    key: 4,
-    documentType: "Presciption Request",
-    sender: "Memorial Hospital",
-    date: dateFormat(new Date(), "mmmm dS, h:MM:ss TT"),
-  },
-];
+export const Inbox: React.FC<{ patientId: string }> = ({ patientId }) => {
+  const { isLoading, data: d2 } = useQuery<any[], Error>(
+    `documents-${patientId}`,
+    () => getDocumentsFromPatient(patientId)
+  );
 
-export const Inbox: React.FC = () => {
+  const getData = () => {
+    if (!d2) return [];
+
+    return d2.map((d) => {
+      return {
+        key: d.id,
+        documentType: d.summary,
+        sender: d.mailer,
+        date: dateFormat(d.date, "mmmm dS, h:MM:ss TT"),
+      };
+    });
+  };
+
   return (
     <Table
       pagination={{ pageSize: 3 }}
       // @ts-ignore
       columns={columns}
+      loading={isLoading}
       scroll={{ x: 600 }}
-      dataSource={data}
+      dataSource={getData()}
     />
   );
 };
