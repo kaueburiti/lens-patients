@@ -2,7 +2,7 @@ import React from "react";
 import { AnimateSharedLayout } from "framer-motion";
 import { Layout } from "./layout/Layout";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { PatientList } from "./patients/list/PatientList";
+import { PatientList } from "./patient/list/PatientList";
 
 const queryClient = new QueryClient();
 
