@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { Col, Row } from "antd";
+import { Col, Row, Spin } from "antd";
 import { useQuery } from "react-query";
 
 import { getAllPatiants } from "../../api/api";
@@ -8,6 +8,7 @@ import { CardProps } from "../../card/Card.types";
 import { PATIENTS } from "../../data/data";
 import { Card } from "../../card/Card";
 import { Profile } from "../../profile/Profile";
+import { CardPlaceholder } from "../../card/CardPlaceholder";
 
 export const PatientList: React.FC = () => {
   const { isLoading, data } = useQuery<CardProps[], Error>(
@@ -23,7 +24,18 @@ export const PatientList: React.FC = () => {
     return data.find((person) => person.id === selectedId) || PATIENTS[0];
   };
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading)
+    return (
+      <Row gutter={[32, 32]}>
+        {[1, 2, 3, 4, 5, 6].map((card) => {
+          return (
+            <Col xs={24} sm={12} lg={8} key={card}>
+              <CardPlaceholder />
+            </Col>
+          );
+        })}
+      </Row>
+    );
 
   return (
     <>
