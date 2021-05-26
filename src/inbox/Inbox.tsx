@@ -4,8 +4,9 @@ import { DownloadOutlined } from "@ant-design/icons";
 import React from "react";
 import { useQuery } from "react-query";
 import { getDocumentsFromPatient } from "../api/api";
+import { Documents } from "./Documents.type";
 
-const columns = [
+const COLUMNS = [
   {
     title: "Doc. Type",
     dataIndex: "documentType",
@@ -30,20 +31,20 @@ const columns = [
 ];
 
 export const Inbox: React.FC<{ patientId: string }> = ({ patientId }) => {
-  const { isLoading, data: d2 } = useQuery<any[], Error>(
+  const { isLoading, data: documents } = useQuery<Documents[], Error>(
     `documents-${patientId}`,
     () => getDocumentsFromPatient(patientId)
   );
 
-  const getData = () => {
-    if (!d2) return [];
+  const getDocumentsData = () => {
+    if (!documents) return [];
 
-    return d2.map((d) => {
+    return documents.map((document) => {
       return {
-        key: d.id,
-        documentType: d.summary,
-        sender: d.mailer,
-        date: dateFormat(d.date, "mmmm dS, h:MM:ss TT"),
+        key: document.id,
+        documentType: document.summary,
+        sender: document.mailer,
+        date: dateFormat(document.date, "mmmm dS, h:MM:ss TT"),
       };
     });
   };
@@ -52,10 +53,10 @@ export const Inbox: React.FC<{ patientId: string }> = ({ patientId }) => {
     <Table
       pagination={{ pageSize: 3 }}
       // @ts-ignore
-      columns={columns}
+      columns={COLUMNS}
       loading={isLoading}
       scroll={{ x: 600 }}
-      dataSource={getData()}
+      dataSource={getDocumentsData()}
     />
   );
 };
