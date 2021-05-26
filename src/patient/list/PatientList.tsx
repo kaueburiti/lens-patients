@@ -3,11 +3,11 @@ import { AnimatePresence } from "framer-motion";
 import { Col, Row } from "antd";
 import { useQuery } from "react-query";
 
-import { getAllPatiants } from "../../api/api";
-import { Card } from "../../card/Card";
-import { Profile } from "../../profile/Profile";
-import { CardPlaceholder } from "../../card/CardPlaceholder";
-import { Patient } from "../types/patient.type";
+import { getAllPatiants } from "../api/api";
+import { Card } from "../card/Card";
+import { Profile } from "../profile/Profile";
+import { CardPlaceholder } from "../card/CardPlaceholder";
+import { Patients, Patient } from "../types/patient.type";
 
 const defaultPatient = {
   firstName: "Willis",
@@ -22,7 +22,7 @@ const defaultPatient = {
 };
 
 export const PatientList: React.FC = () => {
-  const { isLoading, data } = useQuery<Patient[], Error>(
+  const { isLoading, data } = useQuery<Patients, Error>(
     "patients",
     getAllPatiants
   );

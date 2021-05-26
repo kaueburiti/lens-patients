@@ -1,4 +1,4 @@
-import { Patient } from "../patient/types/patient.type";
+import { Patient } from "../types/patient.type";
 
 export type CardProps = Patient & {
   onClick?: () => void;
