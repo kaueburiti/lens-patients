@@ -1,7 +1,7 @@
-export type ProfileProps = {
-  id: string;
-  firstName: string;
-  lastName: string;
-  pictureUrl: string;
+import { Patient } from "../patient/types/patient.type";
+
+export type ProfileProps = Patient & {
   onClose: () => void;
 };
+
+export type ProfileInfosProps = { label: string; infos: string[] };

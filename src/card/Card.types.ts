@@ -1,7 +1,5 @@
-export type CardProps = {
-  id: string;
-  pictureUrl: string;
-  firstName: string;
-  lastName: string;
+import { Patient } from "../patient/types/patient.type";
+
+export type CardProps = Patient & {
   onClick?: () => void;
 };
