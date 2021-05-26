@@ -1,7 +1,7 @@
 import React from "react";
 import * as Styled from "./Profile.styled";
 import { ProfileProps } from "./Profile.types";
-import { Inbox } from "./../inbox/Inbox";
+import { Inbox } from "../documents/inbox/Inbox";
 import { ProfileInfos } from "./ProfileInfo";
 
 export const Profile: React.FC<ProfileProps> = ({
