@@ -20,12 +20,14 @@ export const CardContent = styled(motion.div)`
   pointer-events: auto;
   position: relative;
   border-radius: 20px;
-  background: #ffffff;
+  background: transparent;
   overflow: hidden;
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  border: 1px solid #f0f0f0;
+
+  box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px,
+    rgb(0 0 0 / 30%) 0px 8px 16px -8px;
 
   &:hover {
     cursor: pointer;
