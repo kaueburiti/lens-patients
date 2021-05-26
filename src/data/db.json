@@ -9,7 +9,11 @@
       "middleName": "a",
       "mobilePhone": "742-911-3536",
       "workPhone": "096-066-3615",
-      "dateOfBirth": "1940-06-12T00:00:00"
+      "dateOfBirth": "1940-06-12T00:00:00",
+      "problems": ["Sleep apnea", "Acid reflux"],
+      "allergies": ["Penacillin"],
+      "medications": ["Aspirin"],
+      "flags": ["Follow Up", "Heart failure"]
     },
     {
       "firstName": "Willis",
@@ -20,7 +24,11 @@
       "middleName": "b",
       "mobilePhone": "909-571-8048",
       "workPhone": "072-357-4271",
-      "dateOfBirth": "1940-06-12T00:00:00"
+      "dateOfBirth": "1940-06-12T00:00:00",
+      "problems": ["Anxiety", "Depression"],
+      "allergies": ["Dipyrone", "Amoxicillin"],
+      "medications": ["Citalopram"],
+      "flags": ["Follow Up", "Psychological monitoring"]
     },
     {
       "firstName": "Ira",
@@ -31,7 +39,11 @@
       "middleName": "a",
       "mobilePhone": "050-633-7106",
       "workPhone": "209-110-0146",
-      "dateOfBirth": "1940-06-12T00:00:00"
+      "dateOfBirth": "1940-06-12T00:00:00",
+      "problems": ["Acne", "Rosacea", "Psoriasis"],
+      "allergies": ["Tetracycline"],
+      "medications": ["Azelaic acid", "Metronidazole"],
+      "flags": ["Follow Up", "Allergies"]
     },
     {
       "firstName": "Maxine",
@@ -42,7 +54,11 @@
       "middleName": "c",
       "mobilePhone": "629-365-5179",
       "workPhone": "565-986-5565",
-      "dateOfBirth": "1940-06-12T00:00:00"
+      "dateOfBirth": "1940-06-12T00:00:00",
+      "problems": ["Depression"],
+      "allergies": ["Dipyrone", "Amoxicillin", "Penacillin"],
+      "medications": ["Citalopram"],
+      "flags": ["Follow Up", "Psychological monitoring"]
     },
     {
       "firstName": "Lisa",
@@ -53,7 +69,11 @@
       "middleName": "c",
       "mobilePhone": "944-931-6267",
       "workPhone": "984-559-7840",
-      "dateOfBirth": "1940-06-12T00:00:00"
+      "dateOfBirth": "1940-06-12T00:00:00",
+      "problems": ["Sleep apnea", "Acid reflux"],
+      "allergies": ["Penacillin"],
+      "medications": ["Aspirin"],
+      "flags": ["Follow Up", "Heart failure"]
     },
     {
       "firstName": "Herman",
@@ -64,7 +84,11 @@
       "middleName": "c",
       "mobilePhone": "314-528-2623",
       "workPhone": "072-182-2969",
-      "dateOfBirth": "1940-06-12T00:00:00"
+      "dateOfBirth": "1940-06-12T00:00:00",
+      "problems": ["Anxiety"],
+      "allergies": ["Amoxicillin"],
+      "medications": ["Citalopram"],
+      "flags": ["Follow Up", "Psychological monitoring"]
     }
   ],
   "documents": [
