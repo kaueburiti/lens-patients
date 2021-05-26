@@ -1,12 +1,18 @@
+import React from "react";
 import * as Styled from "./Profile.styled";
 import { ProfileProps } from "./Profile.types";
 import { Inbox } from "./../inbox/Inbox";
+import { ProfileInfos } from "./ProfileInfo";
 
 export const Profile: React.FC<ProfileProps> = ({
   id,
   firstName,
   lastName,
   pictureUrl,
+  problems,
+  allergies,
+  medications,
+  flags,
   onClose,
 }) => {
   return (
@@ -24,38 +30,11 @@ export const Profile: React.FC<ProfileProps> = ({
           <Styled.ProfileImageContainer layoutId={`card-image-container-${id}`}>
             <Styled.ProfileImage src={pictureUrl} alt="" />
             <Styled.ProfileImageOverlay />
-
             <Styled.ProfileInfosContainer>
-              <Styled.ProfileInfos>
-                <Styled.ProfileInfoTitle>Problems:</Styled.ProfileInfoTitle>
-                <Styled.ProfileInfoFlags type="problems">
-                  Sleep apnea
-                </Styled.ProfileInfoFlags>
-                <Styled.ProfileInfoFlags type="problems">
-                  Acid reflux
-                </Styled.ProfileInfoFlags>
-              </Styled.ProfileInfos>
-              <Styled.ProfileInfos>
-                <Styled.ProfileInfoTitle>Allergies:</Styled.ProfileInfoTitle>
-                <Styled.ProfileInfoFlags type="allergies">
-                  Penacillin
-                </Styled.ProfileInfoFlags>
-              </Styled.ProfileInfos>
-              <Styled.ProfileInfos>
-                <Styled.ProfileInfoTitle>Medications:</Styled.ProfileInfoTitle>
-                <Styled.ProfileInfoFlags type="medications">
-                  Aspirin
-                </Styled.ProfileInfoFlags>
-              </Styled.ProfileInfos>
-              <Styled.ProfileInfos>
-                <Styled.ProfileInfoTitle>Flags:</Styled.ProfileInfoTitle>
-                <Styled.ProfileInfoFlags type="medications">
-                  Follow Up
-                </Styled.ProfileInfoFlags>
-                <Styled.ProfileInfoFlags type="medications">
-                  Heart failure
-                </Styled.ProfileInfoFlags>
-              </Styled.ProfileInfos>
+              <ProfileInfos label="Problems" infos={problems} />
+              <ProfileInfos label="Allergies" infos={allergies} />
+              <ProfileInfos label="Medications" infos={medications} />
+              <ProfileInfos label="Flags" infos={flags} />
             </Styled.ProfileInfosContainer>
           </Styled.ProfileImageContainer>
           <Styled.ProfileTitleContainer layoutId={`title-container-${id}`}>

@@ -89,7 +89,7 @@ export const ProfileInfoTitle = styled.span`
   margin-right: 16px;
 `;
 
-export const ProfileInfoFlags = styled<{ type: string } & any>(ProfileFlags)`
+export const ProfileInfoFlags = styled(ProfileFlags)`
   display: inline-block;
   padding: 3px 8px;
   font-weight: 800;
